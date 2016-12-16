@@ -11,6 +11,16 @@ describe LeapYear do
 
         expect(leap_year).to be true
       end
+
+      context 'where that year is evenly divisble by 100' do
+        it 'should return false' do
+          year = 100
+
+          leap_year = LeapYear.leap_year?(year)
+
+          expect(leap_year).to be false
+        end
+      end
     end
 
     context 'given a year that is not evenly divisible by 4' do
