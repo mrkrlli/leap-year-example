@@ -14,18 +14,28 @@ describe LeapYear do
 
       context 'where that year is evenly divisble by 100' do
         it 'should return false' do
-          year = 100
+          year = 1900
 
           leap_year = LeapYear.leap_year?(year)
 
           expect(leap_year).to be false
+        end
+
+        context 'given that year is evenly divisble by 400' do
+          it 'should return false' do
+            year = 2000
+
+            leap_year = LeapYear.leap_year?(year)
+
+            expect(leap_year).to be true
+          end
         end
       end
     end
 
     context 'given a year that is not evenly divisible by 4' do
       it 'should return false' do
-        year = 5
+        year = 1997
 
         leap_year = LeapYear.leap_year?(year)
 
